@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Catalogo.Domain.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Catalogo.Data", "src\NerdStore.Catalogo.Data\NerdStore.Catalogo.Data.csproj", "{739B91FD-264C-410A-A2C0-283495536658}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Catalogo.Application", "src\NerdStore.Catalogo.Application\NerdStore.Catalogo.Application.csproj", "{1E48528D-C136-41AD-955F-0A17C52B0EB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,7 @@ Global
 		{D8A38E70-4CF0-4CD1-AE40-5DE81CCC882A} = {450A3017-C3B1-4B95-9B53-9DFC89D4067E}
 		{6B821CDB-D85E-4930-B769-0D918F0E1D3F} = {D8A38E70-4CF0-4CD1-AE40-5DE81CCC882A}
 		{739B91FD-264C-410A-A2C0-283495536658} = {450A3017-C3B1-4B95-9B53-9DFC89D4067E}
+		{1E48528D-C136-41AD-955F-0A17C52B0EB2} = {450A3017-C3B1-4B95-9B53-9DFC89D4067E}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7020B1A8-F9F7-4E7F-99A7-779568BF55FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -89,5 +92,17 @@ Global
 		{739B91FD-264C-410A-A2C0-283495536658}.Release|x64.Build.0 = Release|Any CPU
 		{739B91FD-264C-410A-A2C0-283495536658}.Release|x86.ActiveCfg = Release|Any CPU
 		{739B91FD-264C-410A-A2C0-283495536658}.Release|x86.Build.0 = Release|Any CPU
+		{1E48528D-C136-41AD-955F-0A17C52B0EB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E48528D-C136-41AD-955F-0A17C52B0EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E48528D-C136-41AD-955F-0A17C52B0EB2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1E48528D-C136-41AD-955F-0A17C52B0EB2}.Debug|x64.Build.0 = Debug|Any CPU
+		{1E48528D-C136-41AD-955F-0A17C52B0EB2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1E48528D-C136-41AD-955F-0A17C52B0EB2}.Debug|x86.Build.0 = Debug|Any CPU
+		{1E48528D-C136-41AD-955F-0A17C52B0EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E48528D-C136-41AD-955F-0A17C52B0EB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E48528D-C136-41AD-955F-0A17C52B0EB2}.Release|x64.ActiveCfg = Release|Any CPU
+		{1E48528D-C136-41AD-955F-0A17C52B0EB2}.Release|x64.Build.0 = Release|Any CPU
+		{1E48528D-C136-41AD-955F-0A17C52B0EB2}.Release|x86.ActiveCfg = Release|Any CPU
+		{1E48528D-C136-41AD-955F-0A17C52B0EB2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
