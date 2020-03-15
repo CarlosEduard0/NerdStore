@@ -5,18 +5,12 @@
         <UserSecretsId>aspnet-NerdStore.WebApp.MVC-44E859A2-18EF-432C-B0EE-4B2A877FEF05</UserSecretsId>
     </PropertyGroup>
 
-
-    <ItemGroup>
-        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
-    </ItemGroup>
-
     <ItemGroup>
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.2" />
         <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.2" />
         <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.2" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.2" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2" />
     </ItemGroup>
 
