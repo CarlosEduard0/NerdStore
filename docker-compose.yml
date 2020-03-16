@@ -1,0 +1,16 @@
+﻿version: '3.7'
+
+services:
+  postgres:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_USER=nerdstore
+      - POSTGRES_PASSWORD=nerdstore
+      - POSTGRES_DB=nerdstore
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
