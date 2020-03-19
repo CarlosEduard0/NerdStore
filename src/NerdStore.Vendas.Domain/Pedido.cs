@@ -8,7 +8,7 @@ namespace NerdStore.Vendas.Domain
     public class Pedido : Entity, IAggregateRoot
     {
         public int Codigo { get; private set; }
-        public Guid ClientId { get; private set; }
+        public Guid ClienteId { get; private set; }
         public Guid? VoucherId { get; private set; }
         public bool VoucherUtilizado { get; private set; }
         public decimal Desconto { get; private set; }
@@ -22,9 +22,9 @@ namespace NerdStore.Vendas.Domain
         // EF Rel.
         public Voucher Voucher { get; private set; }
 
-        public Pedido(Guid clientId, bool voucherUtilizado, decimal desconto, decimal valorTotal)
+        public Pedido(Guid clienteId, bool voucherUtilizado, decimal desconto, decimal valorTotal)
         {
-            ClientId = clientId;
+            ClienteId = clienteId;
             VoucherUtilizado = voucherUtilizado;
             Desconto = desconto;
             ValorTotal = valorTotal;
@@ -162,7 +162,7 @@ namespace NerdStore.Vendas.Domain
             {
                 var pedido = new Pedido
                 {
-                    ClientId = clientId,
+                    ClienteId = clientId,
                 };
                 
                 pedido.TornarRascunho();
