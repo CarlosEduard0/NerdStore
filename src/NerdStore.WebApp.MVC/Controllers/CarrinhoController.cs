@@ -44,9 +44,9 @@ namespace NerdStore.WebApp.MVC.Controllers
             if (produto.QuantidadeEstoque < quantidade)
             {
                 TempData["Erro"] = "Produto com estoque insuficiente";
-                return RedirectToAction("ProdutoDetalhe", "Vitrine", new {id});
+                return RedirectToAction("ProdutoDetalhe", "Vitrine", new { id });
             }
-            
+
             var command = new AdicionarItemPedidoCommand(ClienteId, produto.Id, produto.Nome, quantidade, produto.Valor);
             await _mediatorHandler.EnviarComando(command);
 
@@ -56,10 +56,10 @@ namespace NerdStore.WebApp.MVC.Controllers
             }
 
             TempData["Erros"] = ObterMensagensErro();
-            return RedirectToAction("ProdutoDetalhe", "Vitrine", new {id});
+            return RedirectToAction("ProdutoDetalhe", "Vitrine", new { id });
         }
 
-        /*[HttpPost]
+        [HttpPost]
         [Route("remover-item")]
         public async Task<IActionResult> RemoverItem(Guid id)
         {
@@ -81,10 +81,10 @@ namespace NerdStore.WebApp.MVC.Controllers
         [Route("atualizar-item")]
         public async Task<IActionResult> AtualizarItem(Guid id, int quantidade)
         {
-            var produto = _produtoAppService.ObterPorId(id);
+            var produto = await _produtoAppService.ObterPorId(id);
             if (produto == null) return BadRequest();
 
-            var command = new AtualizarItemPedidoCommand(ClienteId, quantidade);
+            var command = new AtualizarItemPedidoCommand(ClienteId, id, quantidade);
             await _mediatorHandler.EnviarComando(command);
 
             if (OperacaoValida())
@@ -104,10 +104,10 @@ namespace NerdStore.WebApp.MVC.Controllers
 
             if (OperacaoValida())
             {
-                return RedirectToAction("Index")
+                return RedirectToAction("Index");
             }
 
             return View("Index", await _pedidoQueries.ObterCarrinhoCliente(ClienteId));
-        }*/
+        }
     }
 }
