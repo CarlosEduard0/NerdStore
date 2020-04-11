@@ -123,7 +123,7 @@ namespace NerdStore.WebApp.MVC.Controllers
         {
             var carrinho = await _pedidoQueries.ObterCarrinhoCliente(ClienteId);
 
-            var command = new IniciarPedidoCommand(carrinho.PedidoId, carrinho.ClienteId, carrinho.ValorTotal,
+            var command = new IniciarPedidoCommand(carrinho.PedidoId, ClienteId, carrinho.ValorTotal,
                 carrinhoViewModel.Pagamento.NomeCartao, carrinhoViewModel.Pagamento.NumeroCartao,
                 carrinhoViewModel.Pagamento.ExpiracaoCartao, carrinhoViewModel.Pagamento.CvvCartao);
 

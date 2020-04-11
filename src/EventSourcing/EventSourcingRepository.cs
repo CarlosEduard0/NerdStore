@@ -19,17 +19,19 @@ namespace EventSourcing
             _eventStoreService = eventStoreService;
         }
 
-        public async  Task SalvarEvento<TEvent>(TEvent evento) where TEvent : Event
+        public async Task SalvarEvento<TEvent>(TEvent evento) where TEvent : Event
         {
-            await _eventStoreService.GetConnection().AppendToStreamAsync(evento.AggregateId.ToString(),
-                ExpectedVersion.Any, FormatarEvento(evento));
+            await _eventStoreService.GetConnection().AppendToStreamAsync(
+                evento.AggregateId.ToString(),
+                ExpectedVersion.Any,
+                FormatarEvento(evento));
         }
 
         public async Task<IEnumerable<StoredEvent>> ObterEventos(Guid aggregateId)
         {
-            var eventos = await _eventStoreService.GetConnection().ReadStreamEventsBackwardAsync(aggregateId.ToString(),
-                0, 500, false);
-            
+            var eventos = await _eventStoreService.GetConnection()
+                .ReadStreamEventsForwardAsync(aggregateId.ToString(), 0, 500, false);
+
             var listaEventos = new List<StoredEvent>();
 
             foreach (var resolvedEvent in eventos.Events)
@@ -51,8 +53,12 @@ namespace EventSourcing
 
         private static IEnumerable<EventData> FormatarEvento<TEvent>(TEvent evento) where TEvent : Event
         {
-            yield return new EventData(Guid.NewGuid(), evento.MessageType, true,
-                Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(evento)), null);
+            yield return new EventData(
+                Guid.NewGuid(),
+                evento.MessageType,
+                true,
+                Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(evento)),
+                null);
         }
     }
     

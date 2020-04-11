@@ -14,10 +14,10 @@ namespace NerdStore.Core.Messages.CommonMessages.Notifications
         {
             _notifications = new List<DomainNotification>();
         }
-        
-        public Task Handle(DomainNotification notification, CancellationToken cancellationToken)
+
+        public Task Handle(DomainNotification message, CancellationToken cancellationToken)
         {
-            _notifications.Add(notification);
+            _notifications.Add(message);
             return Task.CompletedTask;
         }
 
@@ -28,7 +28,7 @@ namespace NerdStore.Core.Messages.CommonMessages.Notifications
 
         public virtual bool TemNotificacao()
         {
-            return _notifications.Any();
+            return ObterNotificacoes().Any();
         }
 
         public void Dispose()

@@ -5,7 +5,7 @@ using NerdStore.Catalogo.Application.ViewModels;
 
 namespace NerdStore.Catalogo.Application.Services
 {
-    public interface IProdutoAppService
+    public interface IProdutoAppService : IDisposable
     {
         Task<IEnumerable<ProdutoViewModel>> ObterPorCategoria(int codigo);
         Task<ProdutoViewModel> ObterPorId(Guid id);

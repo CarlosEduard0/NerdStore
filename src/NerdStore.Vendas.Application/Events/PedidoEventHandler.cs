@@ -7,9 +7,8 @@ using NerdStore.Vendas.Application.Commands;
 
 namespace NerdStore.Vendas.Application.Events
 {
-    public class PedidoEventHandler : 
+    public class PedidoEventHandler :
         INotificationHandler<PedidoRascunhoIniciadoEvent>,
-        INotificationHandler<PedidoAtualizadoEvent>,
         INotificationHandler<PedidoItemAdicionadoEvent>,
         INotificationHandler<PedidoEstoqueRejeitadoEvent>,
         INotificationHandler<PedidoPagamentoRealizadoEvent>,
@@ -24,11 +23,6 @@ namespace NerdStore.Vendas.Application.Events
         }
 
         public Task Handle(PedidoRascunhoIniciadoEvent notification, CancellationToken cancellationToken)
-        {
-            return Task.CompletedTask;
-        }
-
-        public Task Handle(PedidoAtualizadoEvent notification, CancellationToken cancellationToken)
         {
             return Task.CompletedTask;
         }

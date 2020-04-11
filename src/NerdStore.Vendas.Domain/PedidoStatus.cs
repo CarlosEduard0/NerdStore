@@ -4,8 +4,8 @@
     {
         Rascunho = 0,
         Iniciado = 1,
-        Pago = 2,
-        Entregue = 3,
-        Cancelado = 4
+        Pago = 4,
+        Entregue = 5,
+        Cancelado = 6
     }
 }

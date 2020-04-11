@@ -51,7 +51,7 @@ namespace NerdStore.Vendas.Domain
 
         public void CalcularValorPedido()
         {
-            ValorTotal = _pedidoItems.Sum(x => x.CalcularValor());
+            ValorTotal = PedidoItems.Sum(p => p.CalcularValor());
             CalcularValorTotalDesconto();
         }
         
@@ -96,7 +96,7 @@ namespace NerdStore.Vendas.Domain
 
             if (PedidoItemExistente(item))
             {
-                var itemExistente = _pedidoItems.First(p => p.ProdutoId == item.ProdutoId);
+                var itemExistente = _pedidoItems.FirstOrDefault(p => p.ProdutoId == item.ProdutoId);
                 itemExistente.AdicionarUnidades(item.Quantidade);
                 item = itemExistente;
 
@@ -164,11 +164,11 @@ namespace NerdStore.Vendas.Domain
 
         public static class PedidoFactory
         {
-            public static Pedido NovoPedidoRascunho(Guid clientId)
+            public static Pedido NovoPedidoRascunho(Guid clienteId)
             {
                 var pedido = new Pedido
                 {
-                    ClienteId = clientId,
+                    ClienteId = clienteId,
                 };
                 
                 pedido.TornarRascunho();

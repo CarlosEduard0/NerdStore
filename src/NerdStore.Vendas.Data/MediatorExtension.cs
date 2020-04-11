@@ -7,19 +7,23 @@ namespace NerdStore.Vendas.Data
 {
     public static class MediatorExtension
     {
-        public static async Task PublicarEventos(this IMediatorHandler mediatorHandler, VendasContext context)
+        public static async Task PublicarEventos(this IMediatorHandler mediator, VendasContext ctx)
         {
-            var domainEntities = context.ChangeTracker.Entries<Entity>().Where(x =>
-                x.Entity.Notificacoes != null && x.Entity.Notificacoes.Any()).ToList();
+            var domainEntities = ctx.ChangeTracker
+                .Entries<Entity>()
+                .Where(x => x.Entity.Notificacoes != null && x.Entity.Notificacoes.Any());
 
-            var domainEvents = domainEntities.SelectMany(x => x.Entity.Notificacoes).ToList();
-            
-            domainEntities.ForEach(x => x.Entity.LimparEventos());
+            var domainEvents = domainEntities
+                .SelectMany(x => x.Entity.Notificacoes)
+                .ToList();
 
-            var tasks = domainEvents.Select(async domainEvent =>
-            {
-                await mediatorHandler.PublicarEvento(domainEvent);
-            });
+            domainEntities.ToList()
+                .ForEach(entity => entity.Entity.LimparEventos());
+
+            var tasks = domainEvents
+                .Select(async (domainEvent) => {
+                    await mediator.PublicarEvento(domainEvent);
+                });
 
             await Task.WhenAll(tasks);
         }
