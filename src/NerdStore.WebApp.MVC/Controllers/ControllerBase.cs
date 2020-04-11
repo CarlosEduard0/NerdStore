@@ -11,14 +11,14 @@ namespace NerdStore.WebApp.MVC.Controllers
 {
     public abstract class ControllerBase : Controller
     {
-        private readonly DomainNotificationHandle _notifications;
+        private readonly DomainNotificationHandler _notifications;
         private readonly IMediatorHandler _mediatorHandler;
         
         protected Guid ClienteId = Guid.Parse("7c0e3bc3-7937-4202-8832-b2bd59c3637d");
 
         protected ControllerBase(INotificationHandler<DomainNotification> notifications, IMediatorHandler mediatorHandler)
         {
-            _notifications = (DomainNotificationHandle) notifications;
+            _notifications = (DomainNotificationHandler) notifications;
             _mediatorHandler = mediatorHandler;
         }
 

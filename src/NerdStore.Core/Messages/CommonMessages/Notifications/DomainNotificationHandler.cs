@@ -6,11 +6,11 @@ using MediatR;
 
 namespace NerdStore.Core.Messages.CommonMessages.Notifications
 {
-    public class DomainNotificationHandle : INotificationHandler<DomainNotification>
+    public class DomainNotificationHandler : INotificationHandler<DomainNotification>
     {
         private List<DomainNotification> _notifications;
 
-        public DomainNotificationHandle()
+        public DomainNotificationHandler()
         {
             _notifications = new List<DomainNotification>();
         }

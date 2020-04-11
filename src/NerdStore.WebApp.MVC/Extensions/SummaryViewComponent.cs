@@ -7,11 +7,11 @@ namespace NerdStore.WebApp.MVC.Extensions
 {
     public class SummaryViewComponent : ViewComponent
     {
-        private readonly DomainNotificationHandle _notifications;
+        private readonly DomainNotificationHandler _notifications;
 
         public SummaryViewComponent(INotificationHandler<DomainNotification> notifications)
         {
-            _notifications = (DomainNotificationHandle) notifications;
+            _notifications = (DomainNotificationHandler) notifications;
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
