@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Pagamentos.Busine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Pagamentos.AntiCorruption", "src\NerdStore.Pagamentos.AntiCorruption\NerdStore.Pagamentos.AntiCorruption.csproj", "{2F0C61DD-93E0-493B-8E21-CC2F02746CA6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{CA5BA4EF-8CEA-4F80-8428-9613B0C19F79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing", "src\EventSourcing\EventSourcing.csproj", "{8D3DEBDF-A00D-47D0-A8EC-B03ADEC9882D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +75,7 @@ Global
 		{B5641995-A88D-4C16-893D-E81539FB56CD} = {7138AFD4-A43B-4188-ACC1-5294BDCB1747}
 		{E9161EF5-FAB8-4CC8-9425-9B504E6C54DA} = {7138AFD4-A43B-4188-ACC1-5294BDCB1747}
 		{2F0C61DD-93E0-493B-8E21-CC2F02746CA6} = {7138AFD4-A43B-4188-ACC1-5294BDCB1747}
+		{8D3DEBDF-A00D-47D0-A8EC-B03ADEC9882D} = {CA5BA4EF-8CEA-4F80-8428-9613B0C19F79}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{7020B1A8-F9F7-4E7F-99A7-779568BF55FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -217,5 +222,17 @@ Global
 		{2F0C61DD-93E0-493B-8E21-CC2F02746CA6}.Release|x64.Build.0 = Release|Any CPU
 		{2F0C61DD-93E0-493B-8E21-CC2F02746CA6}.Release|x86.ActiveCfg = Release|Any CPU
 		{2F0C61DD-93E0-493B-8E21-CC2F02746CA6}.Release|x86.Build.0 = Release|Any CPU
+		{8D3DEBDF-A00D-47D0-A8EC-B03ADEC9882D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D3DEBDF-A00D-47D0-A8EC-B03ADEC9882D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D3DEBDF-A00D-47D0-A8EC-B03ADEC9882D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8D3DEBDF-A00D-47D0-A8EC-B03ADEC9882D}.Debug|x64.Build.0 = Debug|Any CPU
+		{8D3DEBDF-A00D-47D0-A8EC-B03ADEC9882D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8D3DEBDF-A00D-47D0-A8EC-B03ADEC9882D}.Debug|x86.Build.0 = Debug|Any CPU
+		{8D3DEBDF-A00D-47D0-A8EC-B03ADEC9882D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D3DEBDF-A00D-47D0-A8EC-B03ADEC9882D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D3DEBDF-A00D-47D0-A8EC-B03ADEC9882D}.Release|x64.ActiveCfg = Release|Any CPU
+		{8D3DEBDF-A00D-47D0-A8EC-B03ADEC9882D}.Release|x64.Build.0 = Release|Any CPU
+		{8D3DEBDF-A00D-47D0-A8EC-B03ADEC9882D}.Release|x86.ActiveCfg = Release|Any CPU
+		{8D3DEBDF-A00D-47D0-A8EC-B03ADEC9882D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
