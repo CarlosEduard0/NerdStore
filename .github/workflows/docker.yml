@@ -1,0 +1,26 @@
+name: Docker Build
+
+on:
+  push:
+    branches: [ master ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Docker login
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+
+    - name: Build NerdStore
+      run: docker build -t carloseduard0/nerdstore .
+      
+    - name: Docker push
+      run: |
+        docker push carloseduard0/nerdstore
