@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace NerdStore.Vendas.Data.Migrations
 {
-    public partial class Pedidos : Migration
+    public partial class Vendas : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateSequence<int>(
-                name: "MinhaSequencia",
+                name: "minhasequencia",
                 startValue: 1000L);
 
             migrationBuilder.CreateTable(
@@ -37,7 +37,7 @@ namespace NerdStore.Vendas.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    Codigo = table.Column<int>(nullable: false, defaultValueSql: "NEXT VALUE FOR MinhaSequencia"),
+                    Codigo = table.Column<int>(nullable: false, defaultValueSql: "nextval('minhasequencia')"),
                     ClienteId = table.Column<Guid>(nullable: false),
                     VoucherId = table.Column<Guid>(nullable: true),
                     VoucherUtilizado = table.Column<bool>(nullable: false),
@@ -102,7 +102,7 @@ namespace NerdStore.Vendas.Data.Migrations
                 name: "Vouchers");
 
             migrationBuilder.DropSequence(
-                name: "MinhaSequencia");
+                name: "minhasequencia");
         }
     }
 }
