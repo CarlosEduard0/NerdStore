@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using NerdStore.WebApp.MVC.Data;
 using Microsoft.Extensions.Configuration;
@@ -67,6 +68,11 @@ namespace NerdStore.WebApp.MVC
 
             app.UseRouting();
 
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+            });
+            
             app.UseAuthentication();
             app.UseAuthorization();
 
