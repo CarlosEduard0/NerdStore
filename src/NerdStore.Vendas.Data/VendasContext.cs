@@ -60,7 +60,7 @@ namespace NerdStore.Vendas.Data
 
             foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys())) relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;
 
-            modelBuilder.HasSequence<int>("MinhaSequencia").StartsAt(1000).IncrementsBy(1);
+            modelBuilder.HasSequence<int>("minhasequencia").StartsAt(1000).IncrementsBy(1);
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -7,16 +7,12 @@
     <ItemGroup>
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.3" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.3" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.3" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.3" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\NerdStore.Core\NerdStore.Core.csproj" />
       <ProjectReference Include="..\NerdStore.Pagamentos.Business\NerdStore.Pagamentos.Business.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Migrations" />
     </ItemGroup>
 
 </Project>
