@@ -44,14 +44,14 @@ Gerenciamento de produtos
 Histórico do pedido coletado através de Event Sourcing.
 <img alt="Event Sourcing" src=".github/images/eventsourcing.png" width="100%">
 
- ##  :fire: Como contribuir
+##  :fire: Como contribuir
  
-Contribuições são sempre bem-vindas e podem ser feitas de várias formas.
+Contribuições são sempre bem-vindas e podem ser feitas de diferentes formas.
  1. **Reportar um bug** <br>
-Se você encontrar algum bug, ele poderá ser reportar através de issues [aqui]().
+Se você encontrar algum bug, ele poderá ser reportado através de issues [aqui](https://github.com/CarlosEduard0/NerdStore/issues).
 
  2. **Solicitar uma nova funcionalidade** <br>
- Você pode solicitar uma nova funcionalidade através de issues [aqui]() e  caso queria, poderá implementa-lá seguindo os passos:
+ Você pode solicitar uma nova funcionalidade através de issues [aqui](https://github.com/CarlosEduard0/NerdStore/issues) e  caso queria, poderá implementá-la seguindo os passos:
 -   Faça um fork desse repositório;
 -   Cria uma branch com a sua feature:  `git checkout -b minha-feature`;
 -   Faça commit das suas alterações:  `git commit -m 'feat: Minha nova feature'`;
